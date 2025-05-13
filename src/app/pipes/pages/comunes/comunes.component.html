@@ -1,1 +1,83 @@
-<p>comunes works!</p>
+
+
+<table class="table border">
+    <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Original</th>
+        <th scope="col">Salida</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>uppercase</td>
+            <td>{{ ciudad }}</td>
+            <td>{{ ciudad | uppercase }}</td>
+        </tr>
+
+        <tr>
+            <td>lowercase</td>
+            <td>{{ ciudad }}</td>
+            <td>{{ ciudad | lowercase }}</td>
+        </tr>
+
+        <tr>
+            <td>titlecase</td>
+            <td>{{ frase }}</td>
+            <td>{{ frase | titlecase }}</td>
+        </tr>
+
+        <tr>
+            <td>DatePipe</td>
+            <td>{{ hoy }}</td>
+            <td>{{ hoy | date }}</td>
+        </tr>
+
+
+         <tr>
+            <td>DatePipe</td>
+            <td>{{ hoy }}</td>
+            <td>{{ hoy | date:'short' }}</td>
+        </tr>
+
+         <tr>
+            <td>DatePipe</td>
+            <td>{{ hoy }}</td>
+            <td>{{ hoy | date:'full' }}</td>
+        </tr>
+
+        <tr>
+            <td>DatePipe</td>
+            <td>{{ hoy }}</td>
+            <td>{{ hoy | date:'fullDate' }}</td>
+        </tr>
+
+
+        <tr>
+            <td>Number</td>
+            <td>{{ precioPorKilo }}</td>
+            <td>{{ precioPorKilo | number }}</td>
+        </tr>
+
+        <tr>
+            <td>Number</td>
+            <td>{{ precioPorKilo }}</td>
+            <td>{{ precioPorKilo | number:'1.2-2' }}</td>
+        </tr>
+
+        <tr>
+            <td>Currency</td>
+            <td>{{ precioPorKilo }}</td>
+            <td>{{ precioPorKilo | currency }}</td>
+        </tr>
+
+        <tr>
+            <td>Currency</td>
+            <td>{{ precioPorKilo }}</td>
+            <td>{{ precioPorKilo | currency:'EUR' }}</td>
+        </tr>
+
+
+
+
+    </tbody>
