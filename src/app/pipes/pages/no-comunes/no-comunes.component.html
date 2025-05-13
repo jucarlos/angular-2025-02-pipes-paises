@@ -12,8 +12,16 @@
         <tr>
             <td>i18nSelectPipe</td>
             <td>{{ nombre }}</td>
-            <td>Hola {{ nombre }} bienvenido/a a mi fiesta</td>
+            <td>Hola {{ nombre }}, {{ genero | i18nSelect:generoMap}} a mi fiesta</td>
         </tr>
+
+         <tr>
+            <td>i18PluralPipe</td>
+            <td>{{ listaEspera }}</td>
+            <td>{{ listaEspera | i18nPlural:listaEsperaMap }}</td>
+        </tr>
+
+
 
     </tbody>
 
@@ -22,4 +30,9 @@
 
     <button (click)="cambiarPersona()" class="btn btn-primary">
         Cambiar Persona
+    </button>
+
+        
+    <button (click)="bajarListaEspera()" class="btn btn-warning mx-3">
+        Bajar lista de espera
     </button>

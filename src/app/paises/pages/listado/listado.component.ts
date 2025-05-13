@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { PaisesService } from '../../services/paises.service';
 
 @Component({
   selector: 'app-listado',
@@ -6,6 +7,18 @@ import { Component } from '@angular/core';
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.css'
 })
-export class ListadoComponent {
+export class ListadoComponent implements OnInit {
+
+
+  private paisesService = inject(PaisesService);
+
+
+  ngOnInit(): void {
+
+    this.paisesService.listarPaises().subscribe( (resp: any ) => {
+      console.log( resp );
+    })
+    
+  }
 
 }
