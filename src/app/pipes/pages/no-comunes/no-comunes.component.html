@@ -1,1 +1,25 @@
-<p>no-comunes works!</p>
+
+
+<table class="table border">
+    <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Original</th>
+        <th scope="col">Salida</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>i18nSelectPipe</td>
+            <td>{{ nombre }}</td>
+            <td>Hola {{ nombre }} bienvenido/a a mi fiesta</td>
+        </tr>
+
+    </tbody>
+
+    </table>
+
+
+    <button (click)="cambiarPersona()" class="btn btn-primary">
+        Cambiar Persona
+    </button>
