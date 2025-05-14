@@ -3,7 +3,16 @@
 <h3>Búsqueda de paises - PADRE</h3>
 <hr>
 
+<div class="mb-2">
+    <shared-busqueda
+    (onValue)="buscarPaisesPorCapital($event)"></shared-busqueda>
+</div>
 
-<shared-busqueda
- (onValue)="buscarPaisesPorCapital($event)"></shared-busqueda>
+@if( isLoading ) {
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}@else {
+    <tabla-paises [countries]="countries"></tabla-paises>
+}
 

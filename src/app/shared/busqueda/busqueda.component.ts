@@ -23,7 +23,7 @@ export class BusquedaComponent implements OnInit, OnDestroy {
     
     this.debouncerSuscripcion = this.debuncer
     .pipe(
-          debounceTime(3000) 
+          debounceTime(1000) 
          ).subscribe( resp => {
                 this.onValue.emit( resp );
           })

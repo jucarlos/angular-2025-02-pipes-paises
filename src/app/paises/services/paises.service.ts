@@ -14,10 +14,24 @@ export class PaisesService {
   private http = inject( HttpClient );
 
 
+
+  public buscarPaisPorCapital( termino: string ) {
+
+    const url = `${environment.baseUrl}/capital/${termino}`
+    return this.obtienePaisesConCriterios( url );
+
+  }
+
+
   public listarPaises(): Observable<Country[]> {
 
-    const url = `${environment.baseUrl}/all`;
+    const url = `${environment.baseUrl}/all/` ;
+    return this.obtienePaisesConCriterios( url );
+  
+  }
 
+
+  private obtienePaisesConCriterios(url: string ): Observable<Country[]> {
 
     return this.http.get<RESTCountry[]>( url )
         .pipe(
@@ -30,6 +44,7 @@ export class PaisesService {
         ) ;
 
   }
+
 
 
 

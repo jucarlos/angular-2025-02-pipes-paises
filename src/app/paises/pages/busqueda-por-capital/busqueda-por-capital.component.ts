@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Country } from '../../interfaces/country.interface';
+import { PaisesService } from '../../services/paises.service';
 
 @Component({
   selector: 'app-busqueda-por-capital',
@@ -9,12 +11,30 @@ import { Component } from '@angular/core';
 export class BusquedaPorCapitalComponent {
 
 
+  public isLoading = false;
+  public countries: Country[] = [];
 
-  
+  private paisesService = inject( PaisesService );
+
+
+
+
 
   buscarPaisesPorCapital( terminoDelHijo: string ) {
 
-    console.log( 'Estoy en el padre :' , terminoDelHijo );
+    this.isLoading = true;
+
+    this.paisesService.buscarPaisPorCapital( terminoDelHijo )
+    .subscribe ( resp => {
+
+      this.countries = resp;
+      this.isLoading = false;
+
+    })
+
+
+
+
   }
 
 }
