@@ -1,5 +1,6 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { PaisesService } from '../../services/paises.service';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-listado',
@@ -13,12 +14,15 @@ export class ListadoComponent implements OnInit {
 
   private paisesService = inject(PaisesService);
 
+  public countries: Country[] = [];
+
+
 
   ngOnInit(): void {
 
     this.paisesService.listarPaises().subscribe( countries  => {
       
-      console.log( countries[0].name );
+      this.countries = countries;
 
     
     })

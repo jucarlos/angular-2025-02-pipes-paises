@@ -19,9 +19,10 @@ export class PaisesService {
         ('https://restcountries.com/v3.1/all')
         .pipe(
           map( resp => CountryMapper.mapRestCountryArrayToCountryArr( resp )),
-          tap( resp => {
-            console.log( 'Estoy en el servicio: ', resp );
-          })
+          // Efectos secundarios en rxjs ( tap )
+          // tap( resp => {
+          //   console.log( 'Estoy en el servicio: ', resp );
+          // })
         )
         
         ;
