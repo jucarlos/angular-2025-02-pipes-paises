@@ -16,9 +16,9 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.paisesService.listarPaises().subscribe( restCountries  => {
+    this.paisesService.listarPaises().subscribe( countries  => {
       
-      console.log( restCountries[0].name.common );
+      console.log( countries[0].name );
 
     
     })
