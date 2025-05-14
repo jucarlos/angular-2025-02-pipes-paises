@@ -16,17 +16,20 @@ export class ListadoComponent implements OnInit {
 
   public countries: Country[] = [];
 
+  public isLoading = false;
+
 
 
   ngOnInit(): void {
 
-    this.paisesService.listarPaises().subscribe( countries  => {
-      
-      this.countries = countries;
+    this.isLoading = true;
 
-    
-    })
-    
+    this.paisesService.listarPaises().subscribe( countries  => {
+      this.countries = countries;
+      this.isLoading = false;
+   
+    });
+ 
   }
 
 }
