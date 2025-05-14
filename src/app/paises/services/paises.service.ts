@@ -9,8 +9,8 @@ export class PaisesService {
   private http = inject( HttpClient );
 
 
-  listarPaises() {
-
+  public listarPaises() {
+    
     return this.http.get('https://restcountries.com/v3.1/all');
 
   }
