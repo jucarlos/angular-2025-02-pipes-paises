@@ -16,11 +16,11 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.paisesService.listarPaises().subscribe( (resp: any)  => {
-      console.log( resp );
+    this.paisesService.listarPaises().subscribe( restCountries  => {
+      
+      console.log( restCountries[0].name.common );
 
-      console.log( resp[0].name.common);
-
+    
     })
     
   }
